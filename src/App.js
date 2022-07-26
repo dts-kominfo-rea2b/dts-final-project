@@ -3,12 +3,12 @@ import Footers from './Component/Footers';
 import Hero from './Component/Hero';
 import Main from './Component/Main';
 import Navbar from './Component/Navbar';
-// import TopBar from './Component/topBar';
+import TopBar from './Component/topBar';
 
 function App() {
   return (
     <>
-      {/* <TopBar /> */}
+      <TopBar />
       <Navbar />
       <Hero />
       <Main />

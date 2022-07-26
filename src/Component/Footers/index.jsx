@@ -10,12 +10,12 @@ export default function Footers() {
 
                 <div className="col-lg-3 col-md-6">
                     <div className="footer-info">
-                        <h3>Restaurantly</h3>
+                        <h3>FizzaFood</h3>
                         <p>
-                            A108 Adam Street <br />
-                            NY 535022, USA  <br />
-                            <strong>Phone:</strong> +1 5589 55488 55<br />
-                            <strong>Email:</strong> info@example.com<br />
+                            Jl. Satu - Satunya <br />
+                            Blok A, PDG  <br />
+                            <strong>Phone:</strong> +62 8777-154-1993<br />
+                            <strong>Email:</strong> ahsan.tawil07@gmail.com<br />
                         </p>
                         <div className="social-links mt-3">
                             <a href="/#" className="twitter"><i className="bx bxl-twitter"></i></a>
@@ -28,31 +28,25 @@ export default function Footers() {
                 </div>
 
                     <div className="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
+                        <h4>About PizzaFood</h4>
                         <ul>
-                        <li><i className="bx bx-chevron-right"></i> <a href="/#">Home</a></li>
-                        <li><i className="bx bx-chevron-right"></i> <a href="/#">About us</a></li>
-                        <li><i className="bx bx-chevron-right"></i> <a href="/#">Services</a></li>
-                        <li><i className="bx bx-chevron-right"></i> <a href="/#">Terms of service</a></li>
-                        <li><i className="bx bx-chevron-right"></i> <a href="/#">Privacy policy</a></li>
+                            <li><i className="bx bx-chevron-right"></i> <a href="/#">About ahsantawil</a></li>
+                            <li><i className="bx bx-chevron-right"></i> <a href="/#">Blog</a></li>
                         </ul>
                     </div>
 
                     <div className="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
+                        <h4>Services</h4>
                         <ul>
-                        <li><i className="bx bx-chevron-right"></i> <a href="/#">Web Design</a></li>
-                        <li><i className="bx bx-chevron-right"></i> <a href="/#">Web Development</a></li>
-                        <li><i className="bx bx-chevron-right"></i> <a href="/#">Product Management</a></li>
-                        <li><i className="bx bx-chevron-right"></i> <a href="/#">Marketing</a></li>
-                        <li><i className="bx bx-chevron-right"></i> <a href="/#">Graphic Design</a></li>
+                        <li><i className="bx bx-chevron-right"></i> <a href="/#">Menu</a></li>
+                        <li><i className="bx bx-chevron-right"></i> <a href="/#">Specials</a></li>
                         </ul>
                     </div>
 
                     <div className="col-lg-4 col-md-6 footer-newsletter">
                         <h4>Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                        <form>
+                        <p>Find me on the track</p>
+                        <form className='form'>
                             <input type="email" name="email" />
                             <input type="submit" value="Subscribe" />
                         </form>
@@ -65,16 +59,10 @@ export default function Footers() {
 
             <div className="container">
                 <div className="copyright">
-                    &copy; Copyright <strong><span>Restaurantly</span></strong>. All Rights Reserved
-                </div>
-                <div className="credits">
-                    Designed by <a href="  /#">ahsantawil</a>
+                    &copy; <strong><span>ahsantawil</span></strong>
                 </div>
             </div>
         </footer>
-
-        {/* <div id="preloader"></div> */}
-        <a href="/#" className="back-to-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a>
     </>
   )
 }
