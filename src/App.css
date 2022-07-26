@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  text-align: center;  
+  font-family: 'Poppins', sans-serif;
 }
 
 .App-logo {
@@ -14,18 +15,23 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #BDC0DB;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #F0F3F5;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #F7BA15;
+}
+
+a {
+  color: #F7BA15;
+  text-decoration: none;
 }
 
 @keyframes App-logo-spin {
