@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route, Switch, Routes } from 'react-router-dom';
-import { ThemeProvider } from '@mui/material';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Box, ThemeProvider } from '@mui/material';
 import theme from './assets/mui-theme';
 
 import Navbar from './components/Navbar';
@@ -11,7 +11,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NoMatch from './pages/NoMatch';
-// import Home from './pages/Home';
+import Home from './pages/Home';
+import PokemonDetail from './pages/PokemonDetail';
 
 function App() {
   return (
@@ -20,20 +21,33 @@ function App() {
         <div className="App">
           <header className="App-header">
             <Navbar />
-            <Routes>
-              {/* <Route path="/login" elemet={<NoMatch />} /> */}
-              <Route path="/login" element={
-                <ProtectedRoute loginOnly={false}>
-                  <Login />
-                </ProtectedRoute>
-              } />
-              <Route path="/register" element={
-                <ProtectedRoute loginOnly={false}>
-                  <Register />
-                </ProtectedRoute>
-              } />
-              <Route path="*" element={<NoMatch />} />
-            </Routes>
+            <Box sx={{ marginTop: 10, marginBottom: 10 }}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={
+                  <ProtectedRoute loginOnly={false}>
+                    <Login />
+                  </ProtectedRoute>
+                } />
+                <Route path="/register" element={
+                  <ProtectedRoute loginOnly={false}>
+                    <Register />
+                  </ProtectedRoute>
+                } />
+                <Route path='/pokemon' element={
+                  <ProtectedRoute>
+                    <PokemonDetail />
+                  </ProtectedRoute>
+                } >
+                  <Route path=':pokemon' element={
+                    <ProtectedRoute>
+                      <PokemonDetail />
+                    </ProtectedRoute>
+                  } />
+                </Route>
+                <Route path="*" element={<NoMatch />} />
+              </Routes>
+            </Box>
             <Footer />
           </header>
         </div>

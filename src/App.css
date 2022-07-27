@@ -8,6 +8,19 @@
   pointer-events: none;
 }
 
+.pokeball-rotate {
+  max-width: 80px;
+  display: block;
+  margin-bottom: -40px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  animation: App-logo-spin infinite 3s linear;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

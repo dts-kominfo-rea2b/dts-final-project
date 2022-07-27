@@ -13,11 +13,11 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import Button from '@mui/material/Button';
 
 import auth from '../libs/firebase';
 import star from '../assets/star.png';
-import { Button } from '@mui/material';
-import theme from '../assets/mui-theme';
+import Loading from './Loading';
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -26,6 +26,13 @@ const ResponsiveAppBar = () => {
 
   const [user, loading, error] = useAuthState(auth);
 
+  React.useEffect(() => {
+    document.title = 'Not Found - Pokébot';
+  }, []);
+
+  if (loading) {
+    return null;
+  }
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 import Button from '@mui/material/Button';
@@ -9,6 +9,8 @@ import { Typography } from '@mui/material';
 
 import TextField from '../components/CustomTextField';
 import Card from '../components/CustomCard';
+import Loading from '../components/Loading';
+
 import auth from '../libs/firebase';
 
 import theme from '../assets/mui-theme';
@@ -17,19 +19,29 @@ import pikachu from '../assets/pikachu.png';
 export default function Login() {
   const navigate = useNavigate();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    document.title = 'Login - Pokébot';
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   const onSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
     const data = new FormData(e.currentTarget);
     const email = data.get('email');
     const password = data.get('password');
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        setLoading(false);
         // Signed in 
         const user = userCredential.user;
-        setIsLoggedIn(true);
         navigate('/');
       })
       .catch((error) => {

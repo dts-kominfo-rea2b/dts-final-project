@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 
 import TextField from '../components/CustomTextField';
 import Card from '../components/CustomCard';
+import Loading from '../components/Loading';
 
 import auth from '../libs/firebase';
 import theme from '../assets/mui-theme';
@@ -18,9 +19,21 @@ import psyduck from '../assets/psyduck.png';
 export default function Register() {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    document.title = 'Register - Pokébot';
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   const onSubmit = (e) => {
     e.preventDefault();
 
+    setLoading(true);
     const data = new FormData(e.currentTarget);
     const email = data.get('email');
     const password = data.get('password');
@@ -28,7 +41,9 @@ export default function Register() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
+
         const user = userCredential.user;
+        setLoading(false);
         navigate('/');
       })
       .catch((error) => {

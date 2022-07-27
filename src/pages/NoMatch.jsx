@@ -21,7 +21,7 @@ const style = {
 export default function NoMatch() {
   return (
     <>
-      <Card sx={{ padding: '0 4rem' }}>
+      <Card sx={{ padding: '0.1rem 4rem' }}>
         <Box my={4}>
           <img src={zubat} style={style} />
           <Grid container spacing={1}>

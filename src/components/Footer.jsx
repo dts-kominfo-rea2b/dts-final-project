@@ -10,9 +10,10 @@ import { Typography } from '@mui/material';
 const style = {
   backgroundColor: theme.palette.secondary.main,
   width: '100%',
-  position: 'absolute',
+  position: 'fixed',
   bottom: 0,
   padding: '10px 0',
+  marginTop: 5
 }
 
 export default function FixedBottomNavigation() {
