@@ -4,7 +4,7 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 
-import theme from '../assets/mui-theme';
+import theme from '../../assets/mui-theme';
 
 export default function CustomizedInputBase({ search, setSearch }) {
 

@@ -34,4 +34,33 @@ const searchPokemons = async (name) => {
   }));
 }
 
-export { getPokemons, searchPokemons };
+const getPokemon = async (pokemon) => {
+  try {
+    const response = await axios.get(`${url}pokemon/${pokemon}`);
+    const pokemonData = response?.data;
+
+    let genera = '';
+    let habitat = '';
+    let captureRate = '';
+    let about = '';
+    if (pokemonData) {
+      const detail = await axios.get(pokemonData.species.url);
+
+      about = detail.data.flavor_text_entries.find(entry => entry.language.name === 'en').flavor_text;
+      genera = detail.data.genera.find(g => g.language.name === 'en').genus;
+      habitat = detail.data.habitat?.name ?? 'Unknown';
+      captureRate = detail.data.capture_rate;
+    }
+
+    pokemonData.genera = genera;
+    pokemonData.habitat = habitat;
+    pokemonData.capture_rate = captureRate;
+    pokemonData.about = about;
+    return pokemonData;
+  } catch (error) {
+    // console.log(error);
+    return null;
+  }
+}
+
+export { getPokemons, searchPokemons, getPokemon };

@@ -21,7 +21,7 @@ function App() {
         <div className="App">
           <header className="App-header">
             <Navbar />
-            <Box sx={{ marginTop: 10, marginBottom: 10 }}>
+            <Box sx={{ marginTop: 10, marginBottom: 10, width: 1 }}>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={
@@ -34,11 +34,7 @@ function App() {
                     <Register />
                   </ProtectedRoute>
                 } />
-                <Route path='/pokemon' element={
-                  <ProtectedRoute>
-                    <PokemonDetail />
-                  </ProtectedRoute>
-                } >
+                <Route path='/pokemon' >
                   <Route path=':pokemon' element={
                     <ProtectedRoute>
                       <PokemonDetail />

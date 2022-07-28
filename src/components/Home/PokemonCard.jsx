@@ -1,10 +1,10 @@
 import { Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import Card from "./CustomCard";
-import shadowBall from "../assets/poke-shadow.png";
-import theme from "../assets/mui-theme";
+import Card from "../CustomCard";
+import shadowBall from "../../assets/poke-shadow.png";
+import theme from "../../assets/mui-theme";
 import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../libs/firebase";
+import auth from "../../libs/firebase";
 
 export default function PokemonCard({ pokemon }) {
 
@@ -60,7 +60,7 @@ export default function PokemonCard({ pokemon }) {
           <Grid container alignItems='center' >
             <Grid item md={4}>
               <img src={shadowBall} style={shadowStyle} alt={pokemon.name} />
-              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} style={imgStyle} alt={pokemon.name} />
+              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} height="150" style={imgStyle} alt={pokemon.name} />
             </Grid>
             <Grid item md={8} >
               <Typography variant="h5" component="h1" color="text" sx={{ fontWeight: 700 }} gutterBottom>

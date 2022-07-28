@@ -3,8 +3,8 @@ import Typography from '@mui/material/Typography';
 
 import Card from '../components/CustomCard';
 
-import zubat from '../assets/zubat.png';
-import { Button, Container, Grid } from '@mui/material';
+import snorlax from '../assets/snorlax.png';
+import { Button, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const style = {
@@ -18,10 +18,10 @@ const style = {
 
 export default function NoMatch() {
   return (
-    <Container>
+    <>
       <Card sx={{ padding: '0.1rem 4rem' }}>
         <Box my={4}>
-          <img src={zubat} style={style} />
+          <img src={snorlax} style={style} />
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <Typography variant="h2" component="h1" gutterBottom>
@@ -30,12 +30,12 @@ export default function NoMatch() {
             </Grid>
             <Grid item xs={12}>
               <Typography variant="h5" component="h2" gutterBottom>
-                Page not found
+                Pokemon not found
               </Typography>
             </Grid>
             <Grid item xs={12}>
               <Typography variant="body1" component="p">
-                The page you are looking for does not exist.
+                Pokemon does not exist, please find another pokemon.
               </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -48,6 +48,6 @@ export default function NoMatch() {
           </Grid>
         </Box>
       </Card>
-    </Container>
+    </>
   );
 };

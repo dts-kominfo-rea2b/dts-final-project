@@ -2,10 +2,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from 'react';
 
-import { Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 
 import TextField from '../components/CustomTextField';
 import Card from '../components/CustomCard';
@@ -42,12 +41,13 @@ export default function Register() {
       .then((userCredential) => {
         // Signed in
 
-        const user = userCredential.user;
+        // const user = userCredential.user;
+
         setLoading(false);
         navigate('/');
       })
       .catch((error) => {
-        const errorCode = error.code;
+        // const errorCode = error.code;
         const errorMessage = error.message;
         setError(errorMessage);
       });
@@ -63,9 +63,9 @@ export default function Register() {
   }
 
   return (
-    <Box>
+    <Container>
       <Card>
-        <img src={psyduck} style={style} />
+        <img src={psyduck} alt="psyduck" style={style} />
         <h1>Create an account</h1>
         <Grid container spacing={1} component="form" onSubmit={onSubmit}>
           <Grid item xs={12}>
@@ -85,6 +85,6 @@ export default function Register() {
           </Grid>
         </Grid>
       </Card>
-    </Box>
+    </Container>
   );
 }

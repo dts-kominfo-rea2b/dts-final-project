@@ -5,8 +5,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import Card from '../components/CustomCard';
-import Search from '../components/Search';
-import PokemonCard from '../components/PokemonCard';
+import Search from '../components/Home/Search';
+import PokemonCard from '../components/Home/PokemonCard';
 import Loading from '../components/Loading';
 
 import pokeball from '../assets/pokeball.png';

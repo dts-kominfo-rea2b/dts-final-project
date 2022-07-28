@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import { Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
 import TextField from '../components/CustomTextField';
 import Card from '../components/CustomCard';
@@ -41,13 +41,14 @@ export default function Login() {
       .then((userCredential) => {
         setLoading(false);
         // Signed in 
-        const user = userCredential.user;
+        // const user = userCredential.user;
         navigate('/');
       })
       .catch((error) => {
-        const errorCode = error.code;
+        // const errorCode = error.code;
         const errorMessage = error.message;
         setError(errorMessage);
+        setLoading(false);
       });
   }
 
@@ -61,9 +62,9 @@ export default function Login() {
   }
 
   return (
-    <Box>
+    <Container>
       <Card>
-        <img src={pikachu} style={style} />
+        <img src={pikachu} alt="pikachu" style={style} />
         <h1>Pokébot</h1>
         <Box component="form" onSubmit={onSubmit}>
           <Grid container spacing={2}>
@@ -85,6 +86,6 @@ export default function Login() {
           </Grid>
         </Box>
       </Card>
-    </Box>
+    </Container>
   );
 }
