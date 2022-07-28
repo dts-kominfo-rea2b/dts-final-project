@@ -50,7 +50,7 @@ export default function PokemonCard({ pokemon }) {
         {user?.email && (
           <Card sx={cardStyle}>
             <Typography variant="subtitle2">
-              You Have: 0
+              You Have: {pokemon.have}
             </Typography>
           </Card>
         )}

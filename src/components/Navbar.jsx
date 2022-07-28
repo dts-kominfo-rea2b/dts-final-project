@@ -65,7 +65,7 @@ const ResponsiveAppBar = () => {
               </Button>
             </Link>
             {user && (
-              <Link to="/">
+              <Link to="/my-pokemon">
                 <Button sx={{ my: 2, color: 'white', display: 'block' }}>
                   My Pokemon
                 </Button>

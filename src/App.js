@@ -12,6 +12,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import NoMatch from './pages/NoMatch';
 import Home from './pages/Home';
+import MyPokemon from './pages/MyPokemon';
 import PokemonDetail from './pages/PokemonDetail';
 
 function App() {
@@ -41,6 +42,11 @@ function App() {
                     </ProtectedRoute>
                   } />
                 </Route>
+                <Route path="/my-pokemon" element={
+                  <ProtectedRoute>
+                    <MyPokemon />
+                  </ProtectedRoute>
+                } />
                 <Route path="*" element={<NoMatch />} />
               </Routes>
             </Box>

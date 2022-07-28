@@ -1,8 +1,11 @@
 import axios from 'axios';
+import {
+  getPokemon as getPokemonFromApi,
+} from './api';
 
 const url = 'https://pokeapi.co/api/v2/';
 
-const getPokemons = async (offset = 0) => {
+const getPokemons = async (offset = 0, email = null) => {
   const response = await axios.get(`${url}pokemon`, {
     params: {
       limit: 60,
@@ -10,10 +13,19 @@ const getPokemons = async (offset = 0) => {
     },
   });
   const pokemons = response.data.results;
-  return pokemons.map(pokemon => ({
-    name: pokemon.name,
-    url: pokemon.url,
-    id: pokemon.url.split('/').slice(-2)[0],
+  return Promise.all(pokemons.map(async (pokemon) => {
+    let have = 0;
+    if (email) {
+      const total = await getPokemonFromApi(email, pokemon.url.split('/').slice(-2)[0]);
+
+      have = total.pokemon
+    }
+    return {
+      name: pokemon.name,
+      url: pokemon.url,
+      id: pokemon.url.split('/').slice(-2)[0],
+      have: have,
+    }
   }));
 }
 
@@ -63,4 +75,8 @@ const getPokemon = async (pokemon) => {
   }
 }
 
-export { getPokemons, searchPokemons, getPokemon };
+export {
+  getPokemons,
+  searchPokemons,
+  getPokemon
+};

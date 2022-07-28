@@ -6,14 +6,13 @@ import Typography from '@mui/material/Typography';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import Card from '../components/CustomCard';
-import Search from '../components/Home/Search';
-import PokemonCard from '../components/Home/PokemonCard';
+import PokemonCard from '../components/MyPokemon/PokemonCard';
 import Loading from '../components/Loading';
+import NotFound from '../components/MyPokemon/NotFound';
 
-import pokeball from '../assets/pokeball.png';
+import pokeballs from '../assets/pokeballs.png';
 import auth from '../libs/firebase';
-import { getPokemons, searchPokemons } from '../services/pokeapi';
-
+import { getPokemons } from '../services/api';
 
 const style = {
   maxWidth: '80px',
@@ -24,14 +23,13 @@ const style = {
   position: 'relative',
 }
 
-export default function Home() {
+export default function MyPokemon() {
 
   const [pokemons, setPokemons] = useState(new Set());
   const [offset, setOffset] = useState(0);
   const [load, setLoad] = useState(true);
-  const [search, setSearch] = useState('');
 
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   const handleScroll = () => {
     const now = window.innerHeight + document.documentElement.scrollTop + 30;
@@ -41,53 +39,46 @@ export default function Home() {
     }
   }
 
-
   useEffect(() => {
     document.title = 'Home - Pokébot';
-    console.log(loading);
   }, []);
 
   useEffect(() => {
-    if (search !== '') {
-      setLoad(true);
-      searchPokemons(search)
-        .then(data => {
-          setLoad(false);
-          setPokemons(data);
-        })
-    }
-  }, [search]);
-
-  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    if (offset < 845 && !loading) {
-      getPokemons(offset, user?.email).then(data => {
-        const newPokemon = new Set([...pokemons, ...data]);
-        setPokemons(newPokemon);
+    if (!loading && load) {
+      console.log('masuk');
+      getPokemons(user?.email, offset).then(data => {
+        const newPokemon = new Set([...pokemons, ...data.pokemons]);
+        if (load === 2) {
+          setPokemons(new Set(data.pokemons));
+        } else {
+          setPokemons(newPokemon);
+        }
         setLoad(false);
       })
     }
-  }, [loading, offset]);
+  }, [offset, load]);
 
   if (load) {
     return <Loading />;
+  }
+
+  if (pokemons.size < 1) {
+    return <NotFound />;
   }
 
   return (
     <Container>
       <Grid container spacing={1} justifyContent="flex-start" alignItems="flex-start" sx={{ marginBottom: 5 }}>
         <Grid item md={12}>
-          <img src={pokeball} style={style} alt={'pokeball'} />
+          <img src={pokeballs} style={style} alt={'pokeballs'} />
           <Card>
             <Box my={2} px={5}>
               <Grid container justifyContent="space-between" alignItems="center">
-                <Grid item md={4} textAlign="start">
+                <Grid item xs={12} textAlign="start">
                   <Typography variant="h5" component="h1" color="primary" sx={{ fontWeight: 700 }} gutterBottom>
-                    Pokédex
+                    My Pokémon
                   </Typography>
-                </Grid>
-                <Grid item md={4}>
-                  <Search search={search} setSearch={setSearch} />
                 </Grid>
               </Grid>
             </Box>
@@ -97,7 +88,7 @@ export default function Home() {
       <Grid container spacing={3}>
         {pokemons && Array.from(pokemons).map(pokemon => (
           <Grid item md={4} key={pokemon.name}>
-            <PokemonCard pokemon={pokemon} />
+            <PokemonCard pokemon={pokemon} setLoad={setLoad} />
           </Grid>
         ))}
       </Grid>

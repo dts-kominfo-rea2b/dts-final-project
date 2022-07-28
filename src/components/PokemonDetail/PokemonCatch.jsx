@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 
-import { Box, Button, Grid, Modal, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography, Modal, } from "@mui/material";
 
 import TextField from "../CustomTextFieldDark";
 
@@ -10,6 +11,10 @@ import plus from "../../assets/plus.svg";
 import theme from "../../assets/mui-theme";
 import gotcha from "../../assets/gotcha.png";
 import pawprints from "../../assets/pawprints.png";
+
+import auth from "../../libs/firebase";
+
+import { storePokemon } from "../../services/api"
 
 const imgStyle = {
   maxWidth: "350px",
@@ -63,7 +68,12 @@ const style = {
 export default function PokemonCatch({ pokemonData }) {
   const [open, setOpen] = useState(false);
   const [modal, setModal] = useState(false);
-  const [error, setError] = useState(false);
+
+  const [user, loading] = useAuthState(auth);
+
+  if (loading) {
+    return null;
+  }
 
   const catchRate = pokemonData.capture_rate / 255 * 100;
 
@@ -72,7 +82,7 @@ export default function PokemonCatch({ pokemonData }) {
   const modalLoading = () => (
     <>
       <img src={pokeball} alt="pokeball" className="pokeball-shake" style={{ width: 100, height: 100, marginTop: '-100px' }} />
-      <Typography variant="h4" id="modal-modal-description" sx={{ mt: 2 }}>
+      <Typography variant="h4" sx={{ mt: 2 }}>
         Catching {pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1)}
       </Typography>
     </>
@@ -81,7 +91,7 @@ export default function PokemonCatch({ pokemonData }) {
   const modalFailed = () => (
     <>
       <img src={pawprints} alt="dot" style={gotchaStyle} />
-      <Typography variant="h4" id="modal-modal-description" sx={{ mt: 2 }}>
+      <Typography variant="h4" sx={{ mt: 2 }}>
         Wild {pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1)} fled!
       </Typography>
     </>
@@ -89,9 +99,66 @@ export default function PokemonCatch({ pokemonData }) {
 
   const modalSuccess = () => (
     <>
-      <Typography variant="h4" id="modal-modal-description" sx={{ mt: 2 }}>
+      <Typography variant="h5" sx={{ mt: 2 }}>
         {pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1)} has been stored in your Bag!
       </Typography>
+    </>
+  )
+
+  const modalError = (error) => (
+    <>
+      <Typography variant="h5" sx={{ mt: 2 }}>
+        {error}
+      </Typography>
+    </>
+  )
+
+  const handleStore = () => {
+    const nickname = document.getElementById("nickname").value;
+
+    const pokemon = {
+      name: nickname,
+      pokemon_id: pokemonData.id,
+      pokemon_name: pokemonData.name,
+      email: user.email,
+    }
+
+    storePokemon(pokemon).then((response) => {
+      if (response.success === true) {
+        setModal(modalSuccess);
+        setTimeout(() => {
+          setOpen(false);
+          setModal(false);
+        }, 3000);
+      } else {
+        setModal(modalError(response.message));
+        setTimeout(() => {
+          setModal(modalCatched);
+        }, 2000);
+      }
+    })
+  }
+
+  const modalCatched = () => (
+    <>
+      <img src={gotcha} alt="dot" style={gotchaStyle} />
+      <Typography variant="h4" sx={{ mt: 2 }}>
+        {pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1)} was caught!
+      </Typography>
+      <Typography variant="subtitle1" sx={{ mt: 2 }}>
+        Give it a nickname and it will be stored in your Bag.
+      </Typography>
+      <Box>
+        <TextField sx={{ width: '50%', marginTop: 4 }} label="Nickname" id="nickname" name="nickname" color="background" variant="outlined" autoComplete="nickname" required />
+        <Grid container sx={{ marginTop: 5 }}>
+          <Grid item xs={6}>
+            <Button type="button" onClick={handleClose} variant="contained" color="secondary">Release</Button>
+          </Grid>
+          <Grid item xs={6}>
+            <Button type="button" onClick={handleStore} variant="contained" color="primary">Catch</Button>
+          </Grid>
+        </Grid>
+      </Box>
     </>
   )
 
@@ -104,55 +171,13 @@ export default function PokemonCatch({ pokemonData }) {
         setModal(modalCatched);
       } else {
         setModal(modalFailed);
+        setTimeout(() => {
+          setOpen(false);
+        }, 2000);
       }
     }, 3000);
 
   };
-
-  const modalCatched = () => (
-    <>
-      <img src={gotcha} alt="dot" style={gotchaStyle} />
-      <Typography variant="h4" id="modal-modal-description" sx={{ mt: 2 }}>
-        {pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1)} was caught!
-      </Typography>
-      <Typography variant="subtitle1" sx={{ mt: 2 }}>
-        Give it a nickname and it will be stored in your Bag.
-      </Typography>
-      <Box component="form" onSubmit={handleStore}>
-        <TextField sx={{ width: '50%', marginTop: 4 }} label="Nickname" name="nickname" color="background" variant="outlined" autoComplete="nickname" required />
-        {error && <Typography sx={{ color: theme.palette.danger.main }} variant="subtitle2">{error}</Typography>}
-        <Grid container sx={{ marginTop: 5 }}>
-          <Grid item xs={6}>
-            <Button type="button" onClick={handleClose} variant="contained" color="secondary">Release</Button>
-          </Grid>
-          <Grid item xs={6}>
-            <Button type="submit" variant="contained" color="primary">Catch</Button>
-          </Grid>
-        </Grid>
-      </Box>
-    </>
-  )
-
-  const handleStore = (e) => {
-    e.preventDefault();
-
-    const data = new FormData(e.currentTarget);
-    const nickname = data.get('nickname');
-
-    if (!nickname) {
-      setError("Please enter a nickname");
-    }
-
-    if (nickname) {
-      setModal(modalSuccess);
-      setTimeout(() => {
-        setOpen(false);
-        setModal(false);
-        setError(false);
-      }, 3000);
-    }
-
-  }
 
   return (
     <>
@@ -173,7 +198,7 @@ export default function PokemonCatch({ pokemonData }) {
       <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`} style={imgStyle} alt={pokemonData.name} loading="lazy" />
       <Button variant="contained" color="primary" onClick={handleOpen}><img src={pokeball} style={{ marginLeft: '-35px' }} alt="pokeball" className="pokeball-shake" /> &nbsp;&nbsp;Catch</Button>
 
-      <Modal open={open} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+      <Modal open={open}>
         <Box sx={style} textAlign="center">
           {modal}
         </Box>
