@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Navbar() {
+export default function NavBar() {
   return (
     <div>
         <header id="header" className="fixed-top d-flex align-items-cente">
