@@ -18,7 +18,8 @@ const submitHandler = (e) => {
         <div onClick={() => setNav(!nav)} className='text-black cursor-pointer'>
             <AiOutlineMenu size={30} />
         </div>
-        <h1 className='w-full sm:text-3xl lg:text-4xl px-2 text-2xl text-black'>My<span className='font-bold text-[#df7e00]'>RECIPE</span></h1>
+        <NavLink to={'/'}>
+        <h1 className='w-full sm:text-3xl lg:text-4xl px-2 text-2xl text-black cursor-pointer'>My<span className='font-bold text-[#df7e00]'>RECIPE</span></h1></NavLink>
         <form  onSubmit={submitHandler} className='bg-gray-200 rounded-full flex items-center mr-4 px-2 w-[200px] sm:w-[400px] lg:w-[500px]'>
             <AiOutlineSearch className='text-black' size={25} />
             <input onChange={(e) => setInput(e.target.value)}
@@ -52,9 +53,11 @@ const submitHandler = (e) => {
                 </ul>
             </nav>
         </div>
-        <button className='bg-black text-white md: flex items-center py-2 rounded-full'>
-            <AiOutlineLogin size={20} className='mr-2' /> Login
+        <NavLink to={'login'}>
+        <button className='bg-[#df7e00] text-white md: flex items-center py-2 rounded-full'>
+            <AiOutlineLogin size={20} /> Login
         </button>
+        </NavLink>
     </div>
   )
 }

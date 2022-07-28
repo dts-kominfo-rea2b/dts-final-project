@@ -43,10 +43,10 @@ function Recipe() {
                     <li key={ingredient.id}>{ingredient.original}</li>
                 ))}
             </ul>     
-            )};
+            )}
         </Info>   
     </DetailWrapper>
-  );
+  )
 }
 
 const DetailWrapper = styled.div`
@@ -80,6 +80,6 @@ font-weight: 600;
 
 const Info = styled.div`
 margin-left: 10rem;
-`
+`;
 
 export default Recipe
