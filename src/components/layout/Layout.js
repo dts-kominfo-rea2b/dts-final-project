@@ -1,14 +1,14 @@
-import Header from "./Header";
 import Footer from "./Footer";
 import BottomBar from "./BottomBar";
 
 // styles
 import styles from "./Layout.module.css";
+import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
+      <Navbar />
       <BottomBar />
       <main className={`${styles.main_content} container`}>{children}</main>
       <Footer />

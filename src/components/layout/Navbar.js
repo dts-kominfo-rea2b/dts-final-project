@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { IoGameController } from "react-icons/io5";
 // styles
-import styles from "./Header.module.css";
+import styles from "./Navbar.module.css";
+import UserLog from "../../Containers/UserLog";
 
-const Header = () => {
+const Navbar = () => {
   const activeStyle = {
     color: "#fff",
   };
@@ -41,12 +42,7 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="login"
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              >
-                Login
-              </NavLink>
+              <UserLog/>
             </li>
           </ul>
         </nav>
@@ -55,4 +51,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

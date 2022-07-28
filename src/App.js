@@ -8,17 +8,29 @@ import Details from "./Containers/Details";
 import NotFound from "./Containers/NotFound";
 import Layout from "./components/layout/Layout";
 import Login from "./Containers/Login";
+import Register from "./Containers/Register"
+import PrivateComponent from "./Containers/PrivateComponent";
 
 function App() {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="popular" element={<Popular />} />
-        <Route path="favorites" element={<Favorites />} />
-        <Route path="games/:id" element={<Details />} />
-        <Route path="login" element={<Login/>}/>
+        <Route path="popular" element={<PrivateComponent loginOnly={true}>
+            <Popular />
+          </PrivateComponent>} 
+        />
+        <Route path="favorites" element={<PrivateComponent loginOnly={true}><Favorites /></PrivateComponent>} />
+        <Route path="games/:id" element={<PrivateComponent loginOnly={true}><Details /></PrivateComponent>} />
         <Route path="*" element={<NotFound />} />
+        <Route path="login" element={
+          <PrivateComponent loginOnly={false}>
+            <Login />
+          </PrivateComponent>} />
+        <Route path="register" element={
+          <PrivateComponent loginOnly={false}>
+            <Login />
+          </PrivateComponent>} />
       </Routes>
     </Layout>
   );

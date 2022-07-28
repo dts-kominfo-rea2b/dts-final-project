@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
 import { useFetch } from "../hooks/useFetch";
 import { useDebounce } from "../hooks/useDebounce";
+import ReactPaginate from "react-paginate";
 
 // styles
 import styles from "./Home.module.css";
@@ -18,11 +19,8 @@ const Home = () => {
     isPending,
     error,
   } = useFetch(`${process.env.REACT_APP_API_URL}/games`);
-
-  const debouncedSearchTerm = useDebounce(searchTerm, 500);
-
   
-
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
   useEffect(() => {
     if (debouncedSearchTerm && allGames) {
       setFilteredGames(
@@ -67,7 +65,7 @@ const Home = () => {
           <GameList items={debouncedSearchTerm ? filteredGames : allGames} />
         )}
       </section>
-    </>
+      </>
   );
 };
 
