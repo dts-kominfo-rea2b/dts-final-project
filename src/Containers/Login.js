@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import * as React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import App from '../App';
 
 
 
@@ -35,22 +34,27 @@ const Login = () => {
     };
 
     return (
-    <><Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs">
             <Box
                 sx={{
                     mt: 10,
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
+                    height:'200vh'
                 }}
             >
                 <Avatar sx={{ m: 1, bgcolor: 'secondary.dark' }}>
                     <LockOutlinedIcon />
                 </Avatar>
-                <Typography component="h1" variant="h5">
+                <Typography component="h1" variant="h3">
                 Game KU
                 </Typography>
-                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                <Box 
+                    sx ={{
+                        width:5000
+                    }}
+                    component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                     <TextField
                         margin="normal"
                         required
@@ -59,7 +63,8 @@ const Login = () => {
                         label="Email Address"
                         name="email"
                         autoComplete="email"
-                        autoFocus />
+                        autoFocus 
+                        variant='outlined'/>
                     <TextField
                         margin="normal"
                         required
@@ -73,6 +78,7 @@ const Login = () => {
                     <Button
                         type="submit"
                         fullWidth
+                        size='large'
                         variant="contained"
                         sx={{ mt: 3, mb: 2 }}
                     >
@@ -87,7 +93,7 @@ const Login = () => {
                     </Grid>
                 </Box>
             </Box>
-        </Container></>
+        </Container>
     );
 }
 

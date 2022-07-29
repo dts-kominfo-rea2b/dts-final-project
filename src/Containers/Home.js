@@ -30,7 +30,7 @@ const Home = () => {
       );
     }
   }, [debouncedSearchTerm, allGames]);
-
+  
   return (
     <>
       <section>

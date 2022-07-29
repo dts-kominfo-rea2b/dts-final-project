@@ -17,11 +17,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="popular" element={<PrivateComponent loginOnly={true}>
-            <Popular />
-          </PrivateComponent>} 
-        />
-        <Route path="favorites" element={<PrivateComponent loginOnly={true}><Favorites /></PrivateComponent>} />
-        <Route path="games/:id" element={<PrivateComponent loginOnly={true}><Details /></PrivateComponent>} />
+          <Popular />
+          </PrivateComponent>} />
+        <Route path="favorites" element={<PrivateComponent loginOnly={true}>
+          <Favorites />
+          </PrivateComponent>} />
+        <Route path="games/:id" element={<PrivateComponent loginOnly={true}>
+          <Details />
+          </PrivateComponent>} />
         <Route path="*" element={<NotFound />} />
         <Route path="login" element={
           <PrivateComponent loginOnly={false}>
