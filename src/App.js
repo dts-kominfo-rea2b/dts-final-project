@@ -8,7 +8,7 @@ import Details from "./Containers/Details";
 import NotFound from "./Containers/NotFound";
 import Layout from "./components/layout/Layout";
 import Login from "./Containers/Login";
-import Register from "./Containers/Register"
+import Register from "./Containers/Register";
 import PrivateComponent from "./Containers/PrivateComponent";
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
           </PrivateComponent>} />
         <Route path="register" element={
           <PrivateComponent loginOnly={false}>
-            <Login />
+            <Register/>
           </PrivateComponent>} />
       </Routes>
     </Layout>
