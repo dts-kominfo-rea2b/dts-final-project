@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { Box } from '@mui/system';
-import CarouselList from './CarouselList';
 import RecipeCard from '../components/RecipeCard';
+import EasyCarouselList from './EasyCarouselList';
 
 function EasyRecipes() {
   const [easyRecipes, setEasyRecipes] = useState([])
@@ -12,8 +12,15 @@ function EasyRecipes() {
   const easyRecipesURL = 'maxReadyTime=20&number=20&addRecipeInformation=true';
 
   const fetchEasyRecipes = async () => {
-    const response = await axios.get(`${baseURL}?apiKey=${process.env.REACT_APP_API_SPOONACULAR}&${easyRecipesURL}`)
-    setEasyRecipes(response.data.results)
+    const checkEasyRecipes = localStorage.getItem('easyRecipes')
+
+    if (checkEasyRecipes) {
+      setEasyRecipes(JSON.parse.checkEasyRecipes);
+    } else {
+      const response = await axios.get(`${baseURL}?apiKey=${process.env.REACT_APP_API_SPOONACULAR}&${easyRecipesURL}`)
+      setEasyRecipes(response.data.results)
+      localStorage.setItem('easyRecipes', JSON.stringify(response.data.results));
+    }
   }
 
   useEffect(() => {
@@ -23,7 +30,7 @@ function EasyRecipes() {
   return (
     <Box>  
       <div>
-        <CarouselList />
+        <EasyCarouselList />
       </div>
       <Box sx={
         {

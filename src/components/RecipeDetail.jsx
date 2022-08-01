@@ -11,12 +11,15 @@ function RecipeDetail() {
   let URLDetail = `recipes/${params?.recipeId}`
 
   const [recipeDetail, setRecipeDetail] = useState(URLDetail)
+  const [recipeIngredient, setRecipeIngredient] = useState([])
 
   useEffect(() => {
     const fetchRecipeDetail = async () => {
         try {
             const query = await axios.get(`${baseRecipeURL}${URLDetail}/information?apiKey=${process.env.REACT_APP_API_SPOONACULAR}`)
-            setRecipeDetail(query.data.results)
+            console.log(query.data);
+            setRecipeDetail(query.data)
+            setRecipeIngredient(query.data.extendedIngredients);
         } catch (error) {
             console.log(error);
         }
@@ -28,16 +31,20 @@ function RecipeDetail() {
   return (
     <Card>
       <Typography>
-        {/* Judul */}
+        {recipeDetail.title}
       </Typography>
       <Typography>
-        {/* Summary */}
+        {recipeDetail.summary}
       </Typography>
       <CardMedia>
-        {/* Gambar */}
+        {recipeDetail.image}
       </CardMedia>
       <Typography>
-        {/* Ingredients */}
+        <ul>
+          {recipeIngredient.map(ingredient => (
+            <li>{ingredient.original}</li>
+            ))}
+        </ul>
       </Typography>
       <Typography>
         {/* Instructions */}
@@ -47,4 +54,4 @@ function RecipeDetail() {
   )
 }
 
-export default RecipeDetail
+export default RecipeDetail;
