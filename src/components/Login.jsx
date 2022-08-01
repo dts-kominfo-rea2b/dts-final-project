@@ -7,18 +7,18 @@ function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  const { signIn } = UserAuth();
+  const { logIn } = UserAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
     try{
-        await signIn(email, password)
-        navigate('/account')
-    } catch (e) {
-        setError(e.message)
-        console.log(e.message)
+        await logIn(email, password)
+        navigate('/')
+    } catch (error) {
+        setError(error.message)
+        console.log(error)
     }
 }
 
@@ -36,6 +36,7 @@ function Login() {
         <div className='flex flex-col py-2'>
             <label className='py-2 font-medium'>Passsword</label>
             <input onChange={(e) => setPassword(e.target.value)} className='border p-3' type="password" />
+            {error ? <p className='p-3 bg-red-400 my-2'>{error}</p> : null}
         </div>
         <button className='border-blue-500 bg-blue-600 hover:bg-blue-500 w-full p-4 my-2 text-white'>Login</button>
       </form>

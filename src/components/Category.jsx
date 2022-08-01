@@ -6,32 +6,32 @@ import React from 'react';
 
 function Category() {
   return (
-    <List>
-        <SLink to={'/cuisine/Italian'}>
-            <FaPizzaSlice />
-            <h4>Italian</h4>        
-        </SLink>
-        <SLink to={'/cuisine/American'}>
-            <FaHamburger />
-            <h4>American</h4>        
-        </SLink>
-        <SLink to={'/cuisine/Thai'}>
-            <GiNoodles />
-            <h4>Thai</h4>        
-        </SLink>
-        <SLink to={'/cuisine/Chinese'}>
-            <GiChopsticks />
-            <h4>Chinese</h4>        
-        </SLink>
-    </List>
+    <div className='mx-auto bg-white rounded-xl shadow-md overflow-hidden flex items-center justify-center p-8'>
+            <SLink to={'/cuisine/Italian'}>
+                <FaPizzaSlice />
+                <h4>Italian</h4>        
+            </SLink>
+            <SLink to={'/cuisine/American'}>
+                <FaHamburger />
+                <h4>American</h4>        
+            </SLink>
+            <SLink to={'/cuisine/Thai'}>
+                <GiNoodles />
+                <h4>Thai</h4>        
+            </SLink>
+            <SLink to={'/cuisine/Chinese'}>
+                <GiChopsticks />
+                <h4>Chinese</h4>        
+            </SLink>
+    </div>
   );
 }
 
-const List = styled.div`
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0rem;
-`;
+// const List = styled.div`
+//     display: flex;
+//     justify-content: center;
+//     margin: 2rem 0rem;
+// `;
 
 const SLink = styled(NavLink)`
     display: flex;
@@ -41,19 +41,19 @@ const SLink = styled(NavLink)`
     border-radius: 50%;
     margin-right: 2rem;
     text-decoration: none;
-    background: linear-gradient(35deg, #494949, #313131);
-    width: 6rem;
-    height: 6rem;
+    background: #df7e00;
+    width: 10rem;
+    height: 10rem;
     cursor: pointer;
     transform: scale(0.8);
 
     h4 {
         color: white;
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
     svg {
         color: white;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
     .active {
         background: linear-gradient (to right, #f27121, #e94057);

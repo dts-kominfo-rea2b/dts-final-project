@@ -1,19 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {UserAuth} from '../context/AuthContext'
+import {UserAuth} from '../context/AuthContext';
 
 function Account() {
-  const { user, logout } = UserAuth();
+  const { user, logOut } = UserAuth();
 
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
-      await logout()
+      await logOut()
       navigate('/')
       console.log('You are logged out')
-    } catch (e) {
-      console.log(e.message)
+    } catch (error) {
+      console.log(error.message)
     }
   }
 
