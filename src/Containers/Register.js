@@ -83,7 +83,7 @@ const Register = () => {
                     <Grid container justifyContent="flex-end">
                         <Grid item>
                             <Link to="/login">
-                                Already have an account? Sign in
+                                Sudah Punya Akun? Login disini
                             </Link>
                         </Grid>
                     </Grid>
