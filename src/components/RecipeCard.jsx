@@ -9,6 +9,8 @@ function RecipeCard({recipe}) {
     console.log(recipeId);
     navigate(`/recipes/${recipeId}`)
   }
+
+  const summary = `${recipe.summary.split('.', 1)[0]}.`;
   
   return (
     <Card 
@@ -47,7 +49,7 @@ function RecipeCard({recipe}) {
               textAlign:'left',
             }}
           >
-            {<p>{recipe.summary.split('.', 1)[0]}</p>}
+            {<p dangerouslySetInnerHTML={{ __html: summary }}></p>}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -30,26 +30,39 @@ function RecipeDetail() {
   
   return (
     <Card>
-      <Typography>
+      <Typography variant='h2'>
         {recipeDetail.title}
       </Typography>
-      <Typography>
-        {recipeDetail.summary}
+      <Typography dangerouslySetInnerHTML ={{ __html: recipeDetail.summary }} variant='h4'>
       </Typography>
-      <CardMedia>
-        {recipeDetail.image}
-      </CardMedia>
+      <CardMedia
+          component="img"
+          image={recipeDetail.image}
+          alt={recipeDetail.title}
+          sx={{
+            maxWidth:500,
+            maxHeight:350,
+          }}
+      />
+      <Typography variant='h3'>
+        Ingredients
+      </Typography>
       <Typography>
         <ul>
           {recipeIngredient.map(ingredient => (
-            <li>{ingredient.original}</li>
+            <li key={ingredient.id}>
+              {ingredient.original}
+            </li>
             ))}
         </ul>
       </Typography>
-      <Typography>
-        {/* Instructions */}
+      <Typography variant='h3'>
+        Instructions
       </Typography>
-      {/* Nutrition Facts */}
+      <Typography
+        dangerouslySetInnerHTML ={{ __html: recipeDetail.instructions }}
+      >
+      </Typography>
     </Card>
   )
 }

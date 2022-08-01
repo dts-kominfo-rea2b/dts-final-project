@@ -37,7 +37,7 @@ function CarouselItem( {recipes} ) {
     >
       {
         recipes.map((recipeItem) => (
-          <SwiperSlide>
+          <SwiperSlide key = {recipeItem.id}>
             <Card sx={{ 
               margin: '1em',
               mb: '2em',

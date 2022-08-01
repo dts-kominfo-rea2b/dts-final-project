@@ -12,17 +12,10 @@ function HealthyRecipes() {
   const healthyRecipesURL = 'sort=healthiness&addRecipeInformation=true&number=20'
 
   const fetchHealthyRecipes = async () => {
-    // Check if localStorage has healthy recipes object
-    const checkHealthyRecipes = localStorage.getItem('healthyRecipes');
-
-    if (checkHealthyRecipes) { // If yes, set healthy recipes from localStorage
-      setHealthyRecipes(JSON.parse(checkHealthyRecipes))
-
-    } else { // if not, fetch using api 
-      const response = await axios.get(`${baseRecipeUrl}?${healthyRecipesURL}&apiKey=${process.env.REACT_APP_API_SPOONACULAR}`)
-      setHealthyRecipes(response.data.recipe);
-      localStorage.setItem('healthyRecipes', JSON.stringify(response.data.recipe))
-    }
+    const response = await axios.get(`${baseRecipeUrl}?${healthyRecipesURL}&apiKey=${process.env.REACT_APP_API_SPOONACULAR}`)
+    const responseResult = response.data.results;
+    console.log(responseResult);
+    setHealthyRecipes(responseResult);
   }
 
   useEffect(() => {
@@ -34,7 +27,8 @@ function HealthyRecipes() {
       <div>
         <HealthyCarouselList />
       </div>
-      <Box sx={
+      <Box 
+      sx={
         {
             display: 'flex',
             flexDirection: 'flow',
@@ -44,7 +38,7 @@ function HealthyRecipes() {
       }>
         {
           healthyRecipes.map(recipe => (
-            <RecipeCard recipe = {recipe}></RecipeCard>
+            <RecipeCard key = {recipe.id} recipe = {recipe}></RecipeCard>
           ))
         }
       </Box>

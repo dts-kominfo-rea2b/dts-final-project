@@ -12,15 +12,9 @@ function EasyRecipes() {
   const easyRecipesURL = 'maxReadyTime=20&number=20&addRecipeInformation=true';
 
   const fetchEasyRecipes = async () => {
-    const checkEasyRecipes = localStorage.getItem('easyRecipes')
-
-    if (checkEasyRecipes) {
-      setEasyRecipes(JSON.parse.checkEasyRecipes);
-    } else {
-      const response = await axios.get(`${baseURL}?apiKey=${process.env.REACT_APP_API_SPOONACULAR}&${easyRecipesURL}`)
-      setEasyRecipes(response.data.results)
-      localStorage.setItem('easyRecipes', JSON.stringify(response.data.results));
-    }
+    const response = await axios.get(`${baseURL}?apiKey=${process.env.REACT_APP_API_SPOONACULAR}&${easyRecipesURL}`)
+    const responseResult = response.data.results;
+    setEasyRecipes(responseResult)
   }
 
   useEffect(() => {
