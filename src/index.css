@@ -1,3 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  button {
+    @apply  rounded-xl px-5 py-1
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +22,222 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-color);
+  margin: 0% 20%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h4 {
+  font-size: 1rem;
+  color: rgb(56, 56, 56);
+}
+
+h3 {
+  font-size: 1,5rem;
+  color: rgb(56, 56, 56);
+  line-height: 2.5rem;
+  margin: 2rem 0rem;
+  
+}
+
+a {
+  color: rgb(56, 56, 56);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Poppins:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --primary-color:#e500bc;
+    --secondary-color:#f50057;
+}
+
+html{
+    font-size: 75.5%;
+}
+.header{
+    width: 100%;
+    height: 600px;
+    color: white;
+    margin-top: 5rem;
+    align-items: center;
+    /* position: absolute; */
+}
+.header::before{
+    content: "";
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../public/bg2.png);
+    z-index: -1;
+    clip-path: circle(60% at center 300px);
+    box-shadow: 0 5px 20px black;
+}
+.row2{
+    align-items: center;
+    top:50px;
+    text-align: center;
+
+}
+.row2 h2{
+    font-size: 3rem;
+    margin-top: 7rem;
+    margin-bottom: 15px;
+}
+.row2 img{
+    margin-top: 30px;
+    width: 250px;
+}
+.row2 h1{
+    font-size: 3rem;
+    font-family: 'Bodoni Moda', serif;
+    margin-top: 10rem;
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 100px;
+}
+.search input{
+    outline: 0;
+    border: 10px;
+    width: 350px;
+    height: 35px;
+    padding: 0 0.5rem;
+    font-size: 15px;
+    font-weight: bold;
+    background-color:rgb(255, 255, 255);
+}
+.search button{
+    outline: none;
+    border: none;
+    height: 35px;
+    padding: 0 0.5rem;
+}
+.container{
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
+    grid-gap:20px;
+    box-sizing: border-box;
+}
+.card{
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    transition: .5s;
+    text-align: center;
+    position: relative;
+}
+.card:hover{
+    transform: scale(0.9);
+    background-color: rgba(255,255,255,0.8);
+}
+.card img{
+    width: 100%;
+    height: 200px;
+    border-radius: 1rem 1rem 0 0;
+    margin-bottom: 1rem;
+}
+.card .bottom{
+    display: flex;
+    flex-direction: column;
+}
+.card .bottom .title{
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+.card .bottom .amount{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0.2rem;
+}
+.overlay{
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.overlay-inner{
+    background: white;
+    width: 700px;
+    height: 550px;
+    padding: 1.5rem;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 1.3rem;
+}
+.overlay-inner .close{
+    position: absolute;
+    top:1rem;
+    right: 1rem;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    background-color: transparent;
+}
+.overlay-inner .inner-box{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.overlay-inner .inner-box img{
+    margin-right: 20px;
+    width: 150px;
+    height: 200px;
+}
+.overlay-inner .inner-box h3{
+    margin-top: 10px;
+    color: green;
+}
+.overlay-inner .inner-box h4{
+    color: blue;
+}
+.overlay-inner .inner-box button{
+    outline: none;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    background-color: #24a0ed;
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem 0.5rem;
+}
+.overlay-inner .description{
+    margin-top: 2rem;
+    text-align: justify;
+    font-size: 13px;
 }
