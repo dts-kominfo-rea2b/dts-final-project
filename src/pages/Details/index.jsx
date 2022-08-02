@@ -1,7 +1,7 @@
 import React from 'react';
-import Footers from '../Footers';
-import Navbar from '../Navbar';
-import TopBar from '../topBar';
+import TopBar from '../../Component/topBar';
+import Navbar from '../../Component/Navbar';
+import Footers from '../../Component/Footers';
 
 export default function Details() {
   return (

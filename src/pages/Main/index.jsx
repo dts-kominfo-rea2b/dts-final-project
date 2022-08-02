@@ -1,48 +1,18 @@
 import React from 'react';
+import TopBar from '../../Component/topBar';
+import Navbar from '../../Component/Navbar';
+import Hero from '../../Component/Hero';
+import Footers from '../../Component/Footers';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 export default function Main() {
   return (
     <>
+    <Router>
+    <TopBar />
+    <Navbar />
+    <Hero />
     <main id="main">
-
-      <section id="why-us" className="why-us">
-        <div className="container" data-aos="fade-up">
-
-          <div className="section-title">
-            <h2>Why Us</h2>
-            <p>Why Choose Our Restaurant</p>
-          </div>
-
-          <div className="row">
-
-            <div className="col-lg-4">
-              <div className="box" data-aos="zoom-in" data-aos-delay="100">
-                <span>01</span>
-                <h4>Lorem Ipsum</h4>
-                <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
-              </div>
-            </div>
-
-            <div className="col-lg-4 mt-4 mt-lg-0">
-              <div className="box" data-aos="zoom-in" data-aos-delay="200">
-                <span>02</span>
-                <h4>Repellat Nihil</h4>
-                <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
-              </div>
-            </div>
-
-            <div className="col-lg-4 mt-4 mt-lg-0">
-              <div className="box" data-aos="zoom-in" data-aos-delay="300">
-                <span>03</span>
-                <h4> Ad ad velit qui</h4>
-                <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
 
       <section id="menu" className="menu section-bg">
         <div className="container" data-aos="fade-up">
@@ -68,7 +38,7 @@ export default function Main() {
             <div className="col-lg-6 menu-item filter-starters">
               <img src="assets/img/menu/lobster-bisque.jpg" className="menu-img" alt="" />
               <div className="menu-content">
-                <a href="/#">Lobster Bisque</a><span>$5.95</span>
+                  <Link to="/details" >Lobster Bisque<span>$5.95</span></Link>
               </div>
               <div className="menu-ingredients">
                 Lorem, deren, trataro, filede, nerada
@@ -78,7 +48,7 @@ export default function Main() {
             <div className="col-lg-6 menu-item filter-specialty">
               <img src="assets/img/menu/bread-barrel.jpg" className="menu-img" alt="" />
               <div className="menu-content">
-                <a href="/#">Bread Barrel</a><span>$6.95</span>
+                <a href="/details">Bread Barrel</a><span>$6.95</span>
               </div>
               <div className="menu-ingredients">
                 Lorem, deren, trataro, filede, nerada
@@ -258,7 +228,8 @@ export default function Main() {
       </section>
 
     </main>
-
+    <Footers />
+    </Router>
     </>
   )
 }

@@ -22,7 +22,8 @@ export default function Login() {
                         <input type="checkbox" value="remember-me" /> Remember me
                     </label>
                 </div>
-                <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                <button className="w-50 btn btn-md btn-primary" type="submit"> <a href="/home">Sign in</a> </button>
+                <button className="w-50 btn btn-md btn-danger" type="submit"><a href="/register">Sign Up</a> </button>
                 <p className="mt-5 mb-3 text-muted">&copy; 2022</p>
             </form>
         </main>
