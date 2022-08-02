@@ -8,7 +8,7 @@ import { AnimatePresence } from 'framer-motion';
 import Login from '../components/Login';
 import Register from '../components/Register';
 import { AuthContextProvider } from '../context/AuthContext';
-// import Account from '../components/Account';
+import Account from '../components/Account';
 import ProtectedRoute from '../components/ProtectedRoute';
 import CatergoryRecipe from './CatergoryRecipe';
 import NotFound from './NotFound';
@@ -88,14 +88,14 @@ function Pages() {
               </ProtectedRoute>
               } 
             />
-            {/* <Route 
+            <Route 
               path='/account' 
               element={
               <ProtectedRoute>
               <Account /> 
               </ProtectedRoute>
               } 
-            /> */}
+            />
         </Routes>
       </AnimatePresence>
     </AuthContextProvider>
