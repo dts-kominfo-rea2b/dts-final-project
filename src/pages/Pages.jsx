@@ -11,6 +11,8 @@ import { AuthContextProvider } from '../context/AuthContext';
 // import Account from '../components/Account';
 import ProtectedRoute from '../components/ProtectedRoute';
 import CatergoryRecipe from './CatergoryRecipe';
+import NotFound from './NotFound';
+import About from './About';
 
 function Pages() {
   const location = useLocation();
@@ -18,6 +20,14 @@ function Pages() {
     <AuthContextProvider>
       <AnimatePresence exitBeforeEnter>
         <Routes Location={location} key={location.path}>
+            <Route 
+              path='*' 
+              element={
+              <>
+              <NotFound /> 
+              </>
+              } 
+            />
             <Route 
               path='/' 
               element={
@@ -41,9 +51,9 @@ function Pages() {
             <Route 
               path='/cuisine/:type' 
               element={
-              <ProtectedRoute>
+              <>
               <Cuisine /> 
-              </ProtectedRoute>
+              </>
               } 
             />
             <Route 
@@ -59,6 +69,14 @@ function Pages() {
               element={
               <>
               <CatergoryRecipe /> 
+              </>
+              } 
+            />
+            <Route 
+              path='/about' 
+              element={
+              <>
+              <About /> 
               </>
               } 
             />
