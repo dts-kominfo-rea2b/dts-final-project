@@ -48,7 +48,7 @@ const Register = () => {
             </label>
             <input
               className=' w-full text-base text-gray-700 px-4 py-2 border  border-white-300 rounded-md focus:outline-none focus:border-purple-400'
-              type=''
+              type='email'
               placeholder='mail@gmail.com'
               onChange={onChange}
               name='email'
@@ -60,7 +60,7 @@ const Register = () => {
             </label>
             <input
               className=' w-full text-base text-gray-700 px-4 py-2 border  border-white-300 rounded-md focus:outline-none focus:border-purple-400'
-              type=''
+              type='password'
               placeholder='Enter your password'
               onChange={onChange}
               name='password'
