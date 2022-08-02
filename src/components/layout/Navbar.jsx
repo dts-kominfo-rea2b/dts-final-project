@@ -25,6 +25,7 @@ function Navbar({ title }) {
           payload: localData,
         });
       }
+      // eslint-disable-next-line
     };
 
     getCurrentCredentials();
