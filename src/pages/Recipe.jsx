@@ -59,7 +59,21 @@ function Recipe() {
   )
 }
 
-
+// const DetailWrapper = styled.div`
+// margin-top: 10rem;
+// margin-bottom; 5rem;
+// display: flex;
+// h2 {
+//     margin-bottom: 2rem;
+// }
+// li {
+//     font-size: 1.2rem;
+//     line-height: 2.5rem;
+// }
+// ul {
+//     margin-top: 2rem;
+// }
+// `
 
 const Button = styled.button`
 padding: 0.5rem 1rem;
@@ -74,6 +88,8 @@ font-weight: 600;
 }
 `
 
-
+// const Info = styled.div`
+// margin-left: 10rem;
+// `
 
 export default Recipe
