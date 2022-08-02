@@ -16,19 +16,20 @@ function Navbar({ title }) {
   };
 
   useEffect(() => {
-    const getCurrentCredentials = () => {
-      const localData = JSON.parse(localStorage.getItem('firebase-auth'));
-
-      if (localData) {
-        dispatch({
-          type: 'SET_USER_CREDENTIALS',
-          payload: localData,
-        });
-      }
-    };
-
     getCurrentCredentials();
+    // eslint-disable-next-line
   }, []);
+
+  const getCurrentCredentials = () => {
+    const localData = JSON.parse(localStorage.getItem('firebase-auth'));
+
+    if (localData) {
+      dispatch({
+        type: 'SET_USER_CREDENTIALS',
+        payload: localData,
+      });
+    }
+  };
 
   return (
     <nav className='navbar mb-6 text-neutral-content'>
