@@ -46,6 +46,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
+    "postcss-pseudo-class-any-link": "^7.1.6",
     "tailwindcss": "^3.1.6"
   }
 }
