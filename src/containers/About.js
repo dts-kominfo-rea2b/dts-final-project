@@ -23,7 +23,7 @@ export default function About() {
         <QuiltedImageList />
       </Box>
       <Typography variant="h6" component="h4" marginTop={3}>
-        Zomato is abreviation of zona makan.
+        Zomakan is abreviation of zona makan.
       </Typography>
       <Box sx={{ display: "flex" }}>
         <Typography variant="paragraph" component="p" marginY={3}>
