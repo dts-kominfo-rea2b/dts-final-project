@@ -33,7 +33,7 @@ function RecipeDetail() {
       <Typography variant='h2'>
         {recipeDetail.title}
       </Typography>
-      <Typography dangerouslySetInnerHTML ={{ __html: recipeDetail.summary }} variant='h4'>
+      <Typography dangerouslySetInnerHTML ={{ __html: recipeDetail.summary }}>
       </Typography>
       <CardMedia
           component="img"
