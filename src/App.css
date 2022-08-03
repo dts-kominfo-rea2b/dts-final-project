@@ -15,14 +15,14 @@
 }
 
 .nav-inactive {
-  color: white;
+  color: black;
   padding: 10px;
   letter-spacing: 1px;
   text-decoration: none;
 }
 
 .nav-active {
-  color: white;
+  color: rgb(27, 15, 133);
   padding: 10px;
   letter-spacing: 1px;
   text-underline-offset: 5px;

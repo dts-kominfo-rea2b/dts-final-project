@@ -23,7 +23,7 @@ const Foodie = () => {
         }
         fetchFoods();
     }, []);
-    console.log(foods);
+    
     return (
         <Box sx={{
             display: 'flex',

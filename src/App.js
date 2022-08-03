@@ -11,12 +11,13 @@ import theme from './themes/theme';
 import { Outlet } from 'react-router-dom';
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
+import About from './containers/About';
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className='App'>
-        <Container>
+        <Container >
           <Grid container spacing={5}>
             <Navbar />
             <Outlet />

@@ -1,4 +1,4 @@
-import { MovieFilter } from '@mui/icons-material';
+import { ForkRightTwoTone, MovieFilter } from '@mui/icons-material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,17 +8,15 @@ import { Link,NavLink } from 'react-router-dom';
 import UserLog from './UserLog';
 
 const navItems = [
-    {text: 'Indonesian', link: '/indonesian'},
-    {text: 'Pricing', link: '/pricing'},
     {text: 'About', link: '/about'},
     ];
   
   const Navbar = () => {
     return (
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar>
+      <Box sx={{ flexGrow: 1 }} m={2} p= {3}>
+        <AppBar sx={{ bgcolor: "white" }}  color="transparent" elevation={0} >
           <Toolbar>
-            <MovieFilter sx={{display: 'flex', mr:1 }} />
+            <ForkRightTwoTone sx={{display: 'flex', mr:1 }} />
             <Typography
               variant="h6"
               sx={{ flexGrow: 1, display: 'block', fontFamily: 'monospace', fontWeight: 700, letterSpacing: '.3rem', }}
@@ -26,6 +24,7 @@ const navItems = [
                 <Link style={{color: 'inherit',textDecoration: 'inherit'}} to="/">
                   zomakan
                 </Link>
+
             </Typography>
             <Box sx={{display: 'block'}}>
                 {navItems.map((item) => (
