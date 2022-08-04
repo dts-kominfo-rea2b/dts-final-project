@@ -39,8 +39,7 @@ function Register() {
   
     } catch (error) {
         setErrorMessage(`${error.message}`)
-    };
-
+    }
   };
 
   return (
