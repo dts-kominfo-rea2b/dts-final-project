@@ -1,0 +1,18 @@
+.content-heading {
+  font-size: 30px;
+  color: #fff;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+.content-category-heading {
+  font-size: 30px;
+  color: #000;
+  font-family: "iceland";
+  font-weight: 600;
+}
+.content-article-heading {
+  font-size: 30px;
+  color: #000;
+  font-family: "Montserrat";
+  font-weight: 800;
+}

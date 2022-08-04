@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+.register-container {
+  margin: 0;
+  padding: 50px;
+  background: linear-gradient(#7e8081, #f0f0f0);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register-content {
+  background: #233142;
+  font-family: "Montserrat";
+  border-radius: 15px;
+  backdrop-filter: blur(1rem);
+  box-shadow: 0px 0 17px -7px #e6f7ff;
+  min-height: 80vh;
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 100%;
+}
+@media screen and (max-width: 992px) {
+  .image-register {
+    margin: 20px 0px;
+  }
+  .right-content {
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 1169px) {
+  .left-content {
+    margin: 0;
+  }
+  .register-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .register-subtitle2 {
+    margin-bottom: 50px;
+  }
+}
+.register-left-content {
+  background-color: #455d7a;
+  margin: auto;
+  width: fit-content;
+  border-radius: 20px;
+}
+.image-register {
+  max-width: 500px;
+  min-width: 300px;
+}
+.register-right-content {
+  padding-left: 40px;
+  padding-right: 60px;
+}
+.register-title {
+  font-family: "Iceland";
+  font-size: 45px;
+  font-weight: 500;
+  color: #e6f7ff;
+  margin-bottom: 0;
+}
+.register-line {
+  margin-top: 0;
+  margin-left: 0;
+  background: #e6f7ff;
+  height: 4px;
+  width: 40%;
+}
+.register-subtitle {
+  font-weight: 400;
+  color: #e6f7ff;
+}
+.register-subtitle2 {
+  text-align: center;
+  font-weight: 400;
+  color: #e6f7ff;
+}

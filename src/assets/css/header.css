@@ -1,0 +1,10 @@
+.header-layout-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.right-layout-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
