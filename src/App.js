@@ -10,13 +10,15 @@ import Layout from "./components/layout/Layout";
 import Login from "./Containers/Login";
 import Register from "./Containers/Register";
 import PrivateComponent from "./Containers/PrivateComponent";
+import Gallery from "./components/layout/corousel"
+
 
 
 function App() {
   return (
     <Layout>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Gallery />} />
         <Route path="popular" element={<PrivateComponent loginOnly={true}>
           <Popular />
           </PrivateComponent>} />
