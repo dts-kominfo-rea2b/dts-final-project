@@ -21,8 +21,7 @@ html {
 body {
   height: 100%;
   background-image: url('img/digital-art-dispersion-overwatch-simple-background-wallpaper-preview.jpg');
-  position: relative;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-position: inherit;
   color: #aaa;
   font-family: var(--font-primary);
