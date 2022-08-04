@@ -38,7 +38,7 @@ export default function Search() {
 
     const handleSelection = (event, value) => {
         setSelectedOption(value.id);
-        console.log(selectedOption);
+        console.log(`${event}: ${selectedOption}`);
         navigate(`/recipes/${value.id}`)
     }
 
@@ -57,6 +57,7 @@ export default function Search() {
             onChange={handleSelection}
             renderInput={(params) => (
             <TextField
+                className='TextField'
                 {...params}
                 label="Search recipes..."
                 InputProps={{
@@ -66,9 +67,6 @@ export default function Search() {
                 onChange={debouncedChangeHandler}
                 variant='filled'
                 size='small'
-                sx={{
-                    color:'white'
-                }}
             />
             )}
         />

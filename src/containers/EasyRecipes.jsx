@@ -36,7 +36,11 @@ function EasyRecipes() {
       }>
         {
           easyRecipes.map(recipe => (
-            <RecipeCard recipe = {recipe}></RecipeCard>
+            <RecipeCard 
+              recipe = {recipe}
+              key = {recipe.id}
+            >
+            </RecipeCard>
           ))
         }
       </Box>

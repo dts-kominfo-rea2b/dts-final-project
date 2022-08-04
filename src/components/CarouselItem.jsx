@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,6 +22,13 @@ import "swiper/css/autoplay";
 import { EffectFade, Autoplay, Pagination, Navigation, Zoom, Keyboard } from "swiper";
 
 function CarouselItem( {recipes} ) {
+  let navigate = useNavigate();
+  
+  const detailRecipe = (recipeId) => {
+    console.log(recipeId);
+    navigate(`/recipes/${recipeId}`)
+  }
+
   return (
     <Swiper
       modules={[EffectFade, Autoplay, Pagination, Navigation, Zoom, Keyboard]}
@@ -37,7 +45,10 @@ function CarouselItem( {recipes} ) {
     >
       {
         recipes.map((recipeItem) => (
-          <SwiperSlide key = {recipeItem.id}>
+          <SwiperSlide 
+            key = {recipeItem.id}
+            onClick = {() => detailRecipe(recipeItem.id)}
+          >
             <Card sx={{ 
               margin: '1em',
               mb: '2em',

@@ -2,6 +2,7 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
+import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
@@ -57,6 +58,11 @@ const NavBar = () => {
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
+            <Avatar 
+              alt="Today's menu logo by freepik" 
+              src="https://i.postimg.cc/J4G6BHSV/logo-rev1.png"
+              sx={{ mr:'0.5em' }}
+            />
             <Typography
               variant="h6"
               noWrap
@@ -66,13 +72,13 @@ const NavBar = () => {
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
+                fontWeight: 500,
+                color: 'white',
                 textDecoration: 'none',
+                fontFamily: 'Pacifico, cursive'
               }}
             >
-              LOGO
+              Today's Menu
             </Typography>
   
             <Box sx={{ 

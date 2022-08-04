@@ -1,48 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Pacifico&display=swap');
+
 .App {
-  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #fffffe;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Card :hover {
+  background-color: #f7dc58;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.CardTitle {
+  color: #0466c8;
 }
 
 .nav-inactive {
   text-decoration: none;
-  color: white;
+  color: #FAFAFA;
+  font-size: medium;
 }
 
 .nav-active {
   text-decoration: none;
-  color: aquamarine;
+  color: #0466c8;
+  font-size: medium;
+}
+
+.RecipeDetail {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transform: translate(32.5%);
+  padding: 2em;
+  margin: 2em 0 2em 0;
+}
+
+.RecipeThumbnail {
+  margin-bottom: 2em;
+  border-radius: 2%;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  align-self: center;
+}
+
+.Title {
+  text-align: center;
+  color: #0466c8;
+}
+
+.HeaderText {
+  color: #0466c8;
+}
+
+.ListText {
+  text-align: left;
+}
+
+.HomeContainer {
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://i.postimg.cc/VNLKngF8/homepage-image2.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+}
+
+.HomeImage {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  justify-self: end;
+  border-radius: 1em;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.HomeTitle {
+  color: #0466c8;
+  padding: 0.5em;
+  padding-bottom: 0.01em;
+}
+
+.HomeDescription {
+  text-align: center;
+
+}
+
+.HomeButton {
+  background: linear-gradient(to bottom right, #1976D2, #2196F3);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  margin: 2rem;
+}
+
+.HomeButton:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(61, 95, 251, 0.5), .125rem .125rem 1rem rgba(118, 120, 255, 0.5);
+}
+
+.HomeButton:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(61, 95, 251, 0.5), .125rem .125rem 1rem rgba(118, 120, 255, 0.5);
+  color: #0466c8;
+  background: linear-gradient(to bottom right, #ffffff, #92ceff);
 }

@@ -9,4 +9,8 @@ body {
 
 code {
   font-family: 'Noto Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

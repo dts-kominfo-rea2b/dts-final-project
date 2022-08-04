@@ -35,6 +35,7 @@ function Login() {
       navigate('/')
     } catch (error) {
       setErrorMessage(error.message)
+      console.log(errorMessage);
     }
   };
 
