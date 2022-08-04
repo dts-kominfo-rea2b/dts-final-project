@@ -8,6 +8,7 @@ const CardList2 = ({ seller }) => {
     const [show,setShow]=useState(false);
     const [bookItem,setItem]=useState();
     console.log(seller)
+       
     return (
         <>
             {

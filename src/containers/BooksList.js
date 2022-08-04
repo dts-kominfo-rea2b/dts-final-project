@@ -8,7 +8,7 @@ function BooksList() {
 
 
     useEffect(() => {
-        axios.get('https://www.googleapis.com/books/v1/volumes?q=popular&key=AIzaSyDsLPlx4HA1Usxq9m7Gs-nWVRAXRgnFbIY'+'&maxResults=40')
+        axios.get('https://www.googleapis.com/books/v1/volumes?q=popular&key=AIzaSyCPD4YYdJVlbDmXv7MEXGuZ1mlsZ-5Dobo'+'&maxResults=18')
         .then(res=>setList(res.data.items))
         .catch(err=>console.log(err));
         });

@@ -7,23 +7,11 @@ const Main=()=>{
     const searchBook=(evt)=>{
         if(evt.key==="Enter")
         {
-            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyDsLPlx4HA1Usxq9m7Gs-nWVRAXRgnFbIY'+'&maxResults=20')
+            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyA6SaT23KNiiA6DnUfUQTvFeyAcQEkwnSU'+'&maxResults=18')
             .then(res=>setData(res.data.items))
             .catch(err=>console.log(err))
         }
     }
-    // useEffect(() => {
-    //     const fetchBooks = async () => {
-    //         try {
-    //             const fetchedBooks = await axios.get('https://www.googleapis.com/books/v1/volumes?q=books&key=AIzaSyDsLPlx4HA1Usxq9m7Gs-nWVRAXRgnFbIY'+'&maxResults=20');
-    //             setList(fetchedBooks.data.items);
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     };
-
-    //     fetchBooks();
-    // }, []);
     
     return(
         <>
@@ -39,7 +27,7 @@ const Main=()=>{
                     <img src="./images/bg2.png" alt="" />
                 </div>
             </div>
-
+            
             <div className="container">
               {
                     <Card book={bookData}/>

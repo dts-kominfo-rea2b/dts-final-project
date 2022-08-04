@@ -107,6 +107,30 @@ html{
     font-family: 'Bodoni Moda', serif;
     margin-top: 10rem;
 }
+
+.container1{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
+    grid-gap:20px;
+    box-sizing: border-box;
+}
+.header1{
+    width: 100%;
+    height: 200px;
+    color: rgb(13, 9, 9);
+    margin-top: 5rem;
+    align-items: center;
+    /* position: absolute; */
+}
+.row2{
+    align-items: center;
+    top:50px;
+    text-align: center;
+}
+
 .search{
     display: flex;
     align-items: center;

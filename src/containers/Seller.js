@@ -8,7 +8,7 @@ function Seller() {
 
 
     useEffect(() => {
-        axios.get('https://www.googleapis.com/books/v1/volumes?q=seller&key=AIzaSyDsLPlx4HA1Usxq9m7Gs-nWVRAXRgnFbIY'+'&maxResults=40')
+        axios.get('https://www.googleapis.com/books/v1/volumes?q=seller&key=AIzaSyA_k9t7PMId9hx0Gx8GerN5SdXIvVV82Xs'+'&maxResults=18')
         .then(res=>setSeller(res.data.items))
         .catch(err=>console.log(err));
         });
