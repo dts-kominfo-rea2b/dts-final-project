@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, CardMedia, Typography } from '@mui/material';
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 function RecipeDetail() {
@@ -22,6 +21,7 @@ function RecipeDetail() {
             setRecipeIngredient(query.data.extendedIngredients);
         } catch (error) {
             console.log(error);
+            alert(error.message);
         }
     };
     fetchRecipeDetail()
