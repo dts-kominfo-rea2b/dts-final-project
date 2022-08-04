@@ -56,7 +56,7 @@ const Popular = () => {
 
       {isPending && <Spinner />}
       {error && <p>{error}</p>}
-      {data && <GameList items={data.slice(0, 10)} />}
+      {data && <GameList items={data.slice(0, 20)} />}
     </section>
   );
 };
