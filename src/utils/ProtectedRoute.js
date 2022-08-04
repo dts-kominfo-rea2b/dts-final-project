@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Space, Spin } from 'antd';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -17,6 +17,7 @@ const ProtectedRoute = ({ children, loginOnly = true }) => {
             navigate('/dashboard');
             return;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user, navigate]);
 
     if (isLoading) {
