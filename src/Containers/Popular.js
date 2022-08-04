@@ -30,16 +30,10 @@ const Popular = () => {
 
   return (
     <section className={styles.popular}>
-      <h1 className="title">
-        Top 10 Games {" "}
-        <span className={styles.lead}>
-          {selectedCategory ? selectedCategory : "To Play"}
-        </span>{" "}
-        {currentMonth} {currentYear}
-      </h1>
+    
 
       <div className={styles.filter}>
-        <label htmlFor="category">More Top 10's:</label>
+        <label htmlFor="category">Silahkan Pilih Kategory Game:</label>
         <select
           defaultValue="Select Category"
           id="category"
