@@ -12,7 +12,7 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary">
       {'Copyright © '}
       <Link color="inherit" href="#">
-        Your Website
+        Today's Menu
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -34,17 +34,12 @@ function Footer() {
         component="footer"
         sx={{
           py: 3,
-          px: 2,
-          mt: 'auto',
-          backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? theme.palette.grey[200]
-              : theme.palette.grey[800],
+          backgroundColor: '#f9c210'
         }}
       >
         <Container maxWidth="sm">
           <Typography variant="body1">
-            My sticky footer can be found here.
+            Find recipe that suits your appetite here at Today's Menu
           </Typography>
           <Copyright />
         </Container>
