@@ -64,12 +64,13 @@ const DetailPost = () => {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    getArticle();
+  }, []);
   const handleDetail = (id) => {
     navigate(`/detail/${id}`);
   };
-  useEffect(() => {
-    getArticle();
-  }, [id]);
+
   return (
     <Layout>
       {loading ? (
