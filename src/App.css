@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-active {
+  color: white;
+  padding: 10px;
+  letter-spacing: 1px;
+  text-underline-offset: 5px;
+}
+
+.nav-inactive {
+  color: white;
+  padding: 10px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+#foot {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgb(33, 101, 189);
+  color: azure;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
