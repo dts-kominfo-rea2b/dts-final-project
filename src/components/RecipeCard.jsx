@@ -14,6 +14,7 @@ function RecipeCard({recipe}) {
   
   return (
     <Card 
+    className='Card'
     onClick={() => detailRecipe(recipe.id)}
     sx={{
       width:312,
@@ -32,6 +33,7 @@ function RecipeCard({recipe}) {
         />
         <CardContent>
           <Typography 
+            className='CardTitle'
             gutterBottom 
             variant="h6" 
             component="div"

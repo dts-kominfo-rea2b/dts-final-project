@@ -29,13 +29,11 @@ function RecipeDetail() {
 
   
   return (
-    <Card>
-      <Typography variant='h2'>
-        {recipeDetail.title}
-      </Typography>
-      <Typography dangerouslySetInnerHTML ={{ __html: recipeDetail.summary }}>
-      </Typography>
+    <Card 
+      className='RecipeDetail'
+    >
       <CardMedia
+          className='RecipeThumbnail'
           component="img"
           image={recipeDetail.image}
           alt={recipeDetail.title}
@@ -44,10 +42,31 @@ function RecipeDetail() {
             maxHeight:350,
           }}
       />
-      <Typography variant='h3'>
+      <Typography 
+        className='Title'
+        variant='h2'
+        sx={{
+          mb:'0.5em'
+        }}
+      >
+        {recipeDetail.title}
+      </Typography>
+      <Typography 
+        dangerouslySetInnerHTML ={{ __html: recipeDetail.summary }}
+        sx={{
+          mb:'2em'
+        }}
+      >
+      </Typography>
+      <Typography 
+        className='HeaderText'
+        variant='h3'
+      >
         Ingredients
       </Typography>
-      <Typography>
+      <Typography
+        className='ListText'
+      >
         <ul>
           {recipeIngredient.map(ingredient => (
             <li key={ingredient.id}>
@@ -56,10 +75,14 @@ function RecipeDetail() {
             ))}
         </ul>
       </Typography>
-      <Typography variant='h3'>
+      <Typography 
+        variant='h3'
+        className='HeaderText'
+      >
         Instructions
       </Typography>
       <Typography
+        className='ListText'
         dangerouslySetInnerHTML ={{ __html: recipeDetail.instructions }}
       >
       </Typography>
