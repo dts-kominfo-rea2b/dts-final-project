@@ -2,6 +2,9 @@
   max-width: 40rem;
   margin: 3rem auto;
 }
+.title {
+  color : #090a0a;
+}
 
 .form label {
   display: block;
