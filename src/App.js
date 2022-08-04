@@ -18,7 +18,7 @@ function App() {
   return (
     <Layout>
       <Routes>
-        <Route path="/" element={<Gallery />} />
+        <Route path="/" element={<Home />} />
         <Route path="popular" element={<PrivateComponent loginOnly={true}>
           <Popular />
           </PrivateComponent>} />
