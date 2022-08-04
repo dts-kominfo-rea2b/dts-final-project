@@ -67,7 +67,7 @@ const DetailPost = () => {
   useEffect(() => {
     getArticle();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [id]);
   const handleDetail = (id) => {
     navigate(`/detail/${id}`);
   };
