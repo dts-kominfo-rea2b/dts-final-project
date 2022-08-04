@@ -8,7 +8,7 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCOxxHKlvA9hT_MtwZx8TH0n0pZeLpzFBI",
+  apiKey: API_KEY,
   authDomain: "mood-meter-ea39b.firebaseapp.com",
   projectId: "mood-meter-ea39b",
   storageBucket: "mood-meter-ea39b.appspot.com",
