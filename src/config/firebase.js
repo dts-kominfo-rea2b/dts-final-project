@@ -4,7 +4,6 @@ import { getAuth } from 'firebase/auth';
 // TODO: replace with your own config
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  const firebaseConfig = {
   apiKey: "AIzaSyCVCeZqJOuUtbTAOd0-An1tR7ouTWvgTSo",
   authDomain: "final-project-a6841.firebaseapp.com",
   projectId: "final-project-a6841",
