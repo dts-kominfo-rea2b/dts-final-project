@@ -4,12 +4,6 @@ export const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
-  const [items, setItems] = useState([]);
-
-  const [pageCount, setpageCount] = useState(0);
-
-  let limit = 10;
-
   useEffect(() => {
     const controller = new AbortController();
     const { signal } = controller;
@@ -18,21 +12,12 @@ export const useFetch = (url) => {
     setError(null);
     async function fetchData() {
       try {
-        const response = await fetch(url, {
-          signal,
-          headers: {
-            "x-rapidapi-host": process.env.REACT_APP_API_HOST,
-            "x-rapidapi-key": process.env.REACT_APP_API_KEY,
-          },
-        });
+        const response = await fetch("https://api.rawg.io/api/games?key=c081ece3d564465e863515d149c45031");
         if (!response.ok) {
           throw new Error("Could not fetch the data.");
         }
         const result = await response.json();
-        const total = response.headers.get("x-total-count");
-        setpageCount(Math.ceil(total / limit));
-        setItems(result);
-        setData(result);
+        setData(result.results);
         setIsPending(false);
         setError(null);
       } catch (error) {
@@ -47,7 +32,7 @@ export const useFetch = (url) => {
     }
     fetchData();
     return () => controller.abort();
-  }, [url], [limit]);
+  }, [url]);
    
   return { data, isPending, error };
 };
