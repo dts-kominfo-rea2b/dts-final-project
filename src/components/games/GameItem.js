@@ -1,45 +1,36 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AiFillWindows, AiFillHeart } from "react-icons/ai";
-import { GoBrowser } from "react-icons/go";
+import { useState } from "react";
+import Modal from "../../Containers/modal";
+
+
 // styles
 import styles from "./GameItem.module.css";
 
-import { FavoritesContext } from "../../context/FavoritesContext";
+
 
 const GameItem = ({ item: game }) => {
-  const { addToFavorite, gameIsFavorite } = useContext(FavoritesContext);
+  const [show,setShow]=useState(false);
+    const [bookItem,setItem]=useState();
+    console.log(game)
+
 
   return (
-    <div className={styles.card}>
-      <Link to={`/games/${game.id}`} className={styles.card_header}>
-        <img className={styles.thumbnail} src={game.thumbnail} alt="test" />
+    <div className={styles.card} >
+      <Link to="#" className={styles.card_header}>
+        <img className={styles.thumbnail} src={game.background_image} alt="test" />
       </Link>
       <div className={styles.card_body}>
-        <Link to={`/games/${game.id}`} className={styles.title}>
-          {game.title}
+        <Link to="#" className={styles.title}>
+          {game.name}
         </Link>
         <p className={`${styles.description} text-muted`}>
-          {game.short_description.substr(0, 70)}...
+          {game.name}...
         </p>
-        <div className={styles.card_footer}>
-          <div>
-            <span className={styles.badge}>{game.genre}</span>
-            {game.platform.includes("PC (Windows)") ? (
-              <AiFillWindows
-                className={styles.platform_icon}
-                title="Tersedia di Windows"
-              />
-            ) : (
-              <GoBrowser
-                className={styles.platform_icon}
-                title="Tersedia di Browser"
-              />
-            )}
-          </div>
-         
-        </div>
+        <button className={`${styles.description}`} onClick={() => setShow(!show)} >Detail Game</button>
+        {show && <Modal bookList={game} />}
       </div>
+      
     </div>
   );
 };
