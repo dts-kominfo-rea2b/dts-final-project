@@ -20,10 +20,10 @@ html {
 
 body {
   height: 100%;
-  background-image: ;
+  background-image: url('img/Kerfin7_NEA_2341.jpg');
   background-position: center;
   background-repeat: no-repeat;
- 
+  background-size: cover;
   color: #aaa;
   font-family: var(--font-primary);
   font-size: 1.6rem;

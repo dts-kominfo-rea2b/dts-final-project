@@ -39,7 +39,6 @@ const Home = () => {
           <h1 className="title">
             Koleksi Game Ku 
           </h1>
-         
         </div>
         <form className={styles.form}>
           <label>

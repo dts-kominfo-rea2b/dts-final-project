@@ -34,9 +34,10 @@ const Login = () => {
     };
 
     return (
-    <Container component="main" maxWidth="xs">
+    
             <Box
                 sx={{
+                    
                     mt: 10,
                     display: 'flex',
                     flexDirection: 'column',
@@ -50,11 +51,7 @@ const Login = () => {
                 <Typography component="h1" variant="h3">
                 Game KU
                 </Typography>
-                <Box 
-                    sx ={{
-                        width:5000
-                    }}
-                    component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                     <TextField
                         margin="normal"
                         required
@@ -93,7 +90,7 @@ const Login = () => {
                     </Grid>
                 </Box>
             </Box>
-        </Container>
+        
     );
 }
 
