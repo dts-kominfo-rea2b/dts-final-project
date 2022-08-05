@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
 import { useFetch } from "../hooks/useFetch";
 import { useDebounce } from "../hooks/useDebounce";
-import ReactPaginate from "react-paginate";
+import UncontrolledExample from "../components/layout/corousel";
+
 
 // styles
 import styles from "./Home.module.css";
@@ -18,13 +19,15 @@ const Home = () => {
     data: allGames,
     isPending,
     error,
-  } = useFetch(`${process.env.REACT_APP_API_URL}/games`);
-  console.log(allGames);
+  } = useFetch('https://api.rawg.io/api/games?key=6e72e26ea2d545368d46014f44954f74');
+  
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
   useEffect(() => {
     if (debouncedSearchTerm && allGames) {
       setFilteredGames(
-        
+        allGames.filter((game) =>
+          game.name.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
+        )
       );
     }
   }, [debouncedSearchTerm, allGames]);
@@ -34,10 +37,9 @@ const Home = () => {
       <section>
         <div className="text-center">
           <h1 className="title">
-            React APP GAMING
+            Koleksi Game Ku 
           </h1>
-          <p className="text-muted subtitle">
-          </p>
+         
         </div>
         <form className={styles.form}>
           <label>
@@ -54,15 +56,18 @@ const Home = () => {
           <p className="text-center">Sorry, no games found :(</p>
         )}
       </section>
-
+      <section >
+        <UncontrolledExample/>
+      </section>
       <section className={styles.games_content}>
         {isPending && <Spinner />}
         {error && <p>{error}</p>}
         {allGames && (
-          <GameList items={allGames.slice(0 , 20)} />
+          <GameList items={debouncedSearchTerm ? filteredGames : allGames} />
         )}
       </section>
-      </>
+      
+    </>
   );
 };
 
