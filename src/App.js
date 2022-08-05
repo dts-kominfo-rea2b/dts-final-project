@@ -11,6 +11,7 @@ import Login from "./Containers/Login";
 import Register from "./Containers/Register";
 import PrivateComponent from "./Containers/PrivateComponent";
 
+
 function App() {
   return (
     <Layout>

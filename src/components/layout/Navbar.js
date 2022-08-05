@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { IoGameController } from "react-icons/io5";
+import { GiFrog } from "react-icons/gi";
 // styles
 import styles from "./Navbar.module.css";
 import UserLog from "../../Containers/UserLog";
@@ -13,7 +13,7 @@ const Navbar = () => {
     <header className={styles.header}>
       <div className={`${styles.container} container`}>
         <NavLink to="/">
-          <IoGameController className={styles.logo} />
+          <GiFrog className={styles.logo} />
         </NavLink>
         <nav className={styles.navigation}>
           <ul>
@@ -22,7 +22,7 @@ const Navbar = () => {
                 to="/"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
               >
-                Home
+                Beranda
               </NavLink>
             </li>
             <li>
@@ -30,15 +30,7 @@ const Navbar = () => {
                 to="popular"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
               >
-                Popular
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="favorites"
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              >
-                Favorites
+                Games
               </NavLink>
             </li>
             <li>

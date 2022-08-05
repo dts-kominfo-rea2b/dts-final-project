@@ -20,7 +20,10 @@ html {
 
 body {
   height: 100%;
-  background-color: #097768;
+  background-image: url('img/modern-futuristic-sci-fi-background.jpg');
+  position: relative;
+  background-repeat: repeat;
+  background-position: inherit;
   color: #aaa;
   font-family: var(--font-primary);
   font-size: 1.6rem;
@@ -29,7 +32,6 @@ body {
 
 #root {
   min-height: 100%;
-  display: flex;
   flex-direction: column;
 }
 

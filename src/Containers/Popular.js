@@ -22,16 +22,10 @@ const Popular = () => {
   );
 
   const categories = [
-    "MMO",
     "MMORPG",
     "Shooter",
     "Strategy",
     "Moba",
-    "Card Games",
-    "Racing",
-    "Sports",
-    "Social",
-    "Fighting",
   ];
 
   return (

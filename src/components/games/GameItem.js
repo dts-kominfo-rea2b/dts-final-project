@@ -37,20 +37,7 @@ const GameItem = ({ item: game }) => {
               />
             )}
           </div>
-          <button
-            onClick={() => addToFavorite(game)}
-            className={styles.btn}
-            title={
-              gameIsFavorite(game.id)
-                ? "Hapus dari Favorit"
-                : "Tambahkan ke Favorit"
-            }
-          >
-            <AiFillHeart
-              className={styles.heart_icon}
-              style={{ color: gameIsFavorite(game.id) ? "red" : "#aaaaaa" }}
-            />
-          </button>
+         
         </div>
       </div>
     </div>

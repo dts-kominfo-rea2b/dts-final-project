@@ -19,14 +19,12 @@ const Home = () => {
     isPending,
     error,
   } = useFetch(`${process.env.REACT_APP_API_URL}/games`);
-  
+  console.log(allGames);
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
   useEffect(() => {
     if (debouncedSearchTerm && allGames) {
       setFilteredGames(
-        allGames.filter((game) =>
-          game.title.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
-        )
+        
       );
     }
   }, [debouncedSearchTerm, allGames]);
@@ -36,10 +34,9 @@ const Home = () => {
       <section>
         <div className="text-center">
           <h1 className="title">
-            Koleksi Game Ku 
+            React APP GAMING
           </h1>
           <p className="text-muted subtitle">
-            {allGames && allGames.length} Game Download dan Bermain gratis
           </p>
         </div>
         <form className={styles.form}>
@@ -62,7 +59,7 @@ const Home = () => {
         {isPending && <Spinner />}
         {error && <p>{error}</p>}
         {allGames && (
-          <GameList items={debouncedSearchTerm ? filteredGames : allGames} />
+          <GameList items={allGames.slice(0 , 20)} />
         )}
       </section>
       </>
