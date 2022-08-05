@@ -4,7 +4,7 @@ import Carousel from 'better-react-carousel'
 
 
 // styles
-import styles from "./corousel.css";
+import styles from "./Footer.module.css";
 
 
 
