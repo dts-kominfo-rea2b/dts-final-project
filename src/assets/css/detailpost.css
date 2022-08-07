@@ -1,0 +1,32 @@
+.container-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.content-category-heading-detail {
+  font-size: 30px;
+  color: #000;
+  font-family: "iceland";
+  font-weight: 600;
+}
+
+.content-category-heading-detail-time {
+  font-size: 20px;
+  color: #000;
+  font-family: "iceland";
+  font-weight: 400;
+}
+.content-category-heading-detail-title {
+  font-size: 45px;
+  color: #000;
+  font-family: "Montserrat";
+  font-weight: 800;
+  margin-top: 20px;
+}
+.content-article-heading-detail {
+  font-size: 30px;
+  color: #000;
+  font-family: "Montserrat";
+  font-weight: 800;
+}

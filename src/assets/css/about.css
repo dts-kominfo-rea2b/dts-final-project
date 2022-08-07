@@ -1,0 +1,34 @@
+.container-about {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 60vh;
+}
+
+.content-about {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.heading-about {
+  font-family: "Montserrat";
+  font-size: 13px;
+}
+
+.line-about {
+  height: 3px;
+  background-color: #000;
+  width: 10%;
+  margin-left: 0;
+}
+.brand-about {
+  font-family: "Montserrat";
+  font-weight: 1000;
+  font-size: 60px;
+  margin-top: 20;
+}
