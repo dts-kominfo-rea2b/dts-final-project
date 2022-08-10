@@ -1,0 +1,116 @@
+{
+  "status": true,
+  "data": {
+    "title": "Latest Devices",
+    "phones": [
+      {
+        "phone_name": "Motorola Moto Tab G62",
+        "slug": "motorola_moto_tab_g62-11746",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/motorola-moto-tab-g70.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/motorola_moto_tab_g62-11746"
+      },
+      {
+        "phone_name": "OnePlus Ace Pro",
+        "slug": "oneplus_ace_pro-11745",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/oneplus-10t-5g.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/oneplus_ace_pro-11745"
+      },
+      {
+        "phone_name": "vivo Y02s",
+        "slug": "vivo_y02s-11697",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/vivo-y02s.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/vivo_y02s-11697"
+      },
+      {
+        "phone_name": "Oppo Reno8 4G",
+        "slug": "oppo_reno8_4g-11743",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/oppo-reno8-4g-r.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/oppo_reno8_4g-11743"
+      },
+      {
+        "phone_name": "vivo Y55",
+        "slug": "vivo_y55-11744",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/vivo-y55-pk.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/vivo_y55-11744"
+      },
+      {
+        "phone_name": "Samsung Galaxy Z Fold4",
+        "slug": "samsung_galaxy_z_fold4-11737",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-z-fold4-5g-0.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/samsung_galaxy_z_fold4-11737"
+      },
+      {
+        "phone_name": "Samsung Galaxy Z Flip4",
+        "slug": "samsung_galaxy_z_flip4-11538",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-z-flip4-5g-0.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/samsung_galaxy_z_flip4-11538"
+      },
+      {
+        "phone_name": "OnePlus Nord N20 SE",
+        "slug": "oneplus_nord_n20_se-11738",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/oneplus-nord-n20-se.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/oneplus_nord_n20_se-11738"
+      },
+      {
+        "phone_name": "Nokia 110 (2022)",
+        "slug": "nokia_110_(2022)-11741",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/nokia-110-2022.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/nokia_110_(2022)-11741"
+      },
+      {
+        "phone_name": "OnePlus Nord N20 SE",
+        "slug": "oneplus_nord_n20_se-11738",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/oneplus-nord-n20-se.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/oneplus_nord_n20_se-11738"
+      },
+      {
+        "phone_name": "Infinix Smart 6 Plus (India)",
+        "slug": "infinix_smart_6_plus_(india)-11742",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/infinix-smart-6-plus.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/infinix_smart_6_plus_(india)-11742"
+      },
+      {
+        "phone_name": "Nokia 8210 4G",
+        "slug": "nokia_8210_4g-11666",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/nokia-8210-4g.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/nokia_8210_4g-11666"
+      },
+      {
+        "phone_name": "Nokia 5710 XpressAudio",
+        "slug": "nokia_5710_xpressaudio-11667",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/nokia-5710-xpressaudio.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/nokia_5710_xpressaudio-11667"
+      },
+      {
+        "phone_name": "Nokia 2660 Flip",
+        "slug": "nokia_2660_flip-11668",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/nokia-2660-flip.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/nokia_2660_flip-11668"
+      },
+      {
+        "phone_name": "vivo T1x (India)",
+        "slug": "vivo_t1x_(india)-11704",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/vivo-t1x-india.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/vivo_t1x_(india)-11704"
+      },
+      {
+        "phone_name": "Oppo Reno8",
+        "slug": "oppo_reno8-11684",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/oppo-reno8.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/oppo_reno8-11684"
+      },
+      {
+        "phone_name": "vivo iQOO 10 Pro",
+        "slug": "vivo_iqoo_10_pro-11701",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/vivo-iqoo10-pro.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/vivo_iqoo_10_pro-11701"
+      },
+      {
+        "phone_name": "vivo iQOO 10",
+        "slug": "vivo_iqoo_10-11703",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/vivo-iqoo10.jpg",
+        "detail": "http://api-mobilespecs.azharimm.site/v2/vivo_iqoo_10-11703"
+      }
+    ]
+  }
+}
