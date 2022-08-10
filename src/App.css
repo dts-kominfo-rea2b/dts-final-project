@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-inactive {
+  color: white;
+  padding: 10px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.nav-active {
+  color: white;
+  padding: 10px;
+  letter-spacing: 1px;
+  text-underline-offset: 5px;
+}

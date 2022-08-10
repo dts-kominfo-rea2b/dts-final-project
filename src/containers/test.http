@@ -1,0 +1,2 @@
+GET https://api-mobilespecs.azharimm.site/v2/latest HTTP/1.1
+Content-Type: application/json
